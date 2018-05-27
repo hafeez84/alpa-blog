@@ -1,0 +1,10 @@
+<h1>Show page</h1>
+<p>
+Title : <%= @article.title %>
+</p>
+
+<p>
+  Description : <%= @article.description %>
+</p>
+
+<p> <%= link_to 'Home', articles_path %> | <%= link_to 'Edit', edit_article_path(@article) %></p>
