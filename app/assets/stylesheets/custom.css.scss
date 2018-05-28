@@ -1,3 +1,49 @@
+$navbar-default-bg:black;
+
 @import "bootstrap-sprockets";
 
 @import "bootstrap";
+
+
+#logo {
+  float: left;
+  font-size:1.7em;
+  text-transform:uppercase;
+  font-weight:bold;
+}
+
+#logo:hover {
+  color:red;
+}
+
+.center {
+  text-align:center;
+}
+
+.center {
+  background-image:asset-url('img.jpg');
+  background-size:cover;
+  height:500px;
+}
+
+.center h1 {
+  color:#fff;
+  text-transform: uppercase;
+  font-weight:bold;
+  letter-spacing:-1px;
+  margin:30px;
+}
+
+.btn-xlarge {
+  background-color:black;
+  font-size:2em;
+}
+
+.sub {
+  background-color:black;
+}
+
+#red:hover {
+  color:red;
+}
+
