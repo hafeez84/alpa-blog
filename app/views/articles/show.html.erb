@@ -1,10 +1,13 @@
 
-<p>
-Title : <%= @article.title %>
-</p>
+<h3 align = "center"> Title : <%= @article.title %> </h3>
 
-<p>
-  Description : <%= @article.description %>
-</p>
-
-<p><%= link_to 'Edit', edit_article_path(@article) %></p>
+<div class =  "well col-xs-8 col-xs-offset-2">
+  <h4 class="des" align="center">Description:</h4>
+  <%= @article.description %>
+  
+  <div class="article-action">
+    <%= link_to 'Edit this article', edit_article_path(@article), class: "btn btn-xs btn-primary "%>
+    <%= link_to 'Delete this article', edit_article_path(@article), method: :delete, data:{confirm: "Are you sure ?"}, class: "btn btn-xs btn-danger "%>
+    <%= link_to 'View all articles', articles_path, class: "btn btn-xs btn-success"%>
+  </div>
+</div>

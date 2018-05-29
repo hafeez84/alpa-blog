@@ -23,17 +23,17 @@ body {
   color:red;
 }
 
-.center {
+.cen {
   text-align:center;
 }
 
-.center {
+.cen {
   background-image:asset-url('img.jpg');
   background-size:cover;
   height:500px;
 }
 
-.center h1 {
+.cen h1 {
   color:#fff;
   text-transform: uppercase;
   font-weight:bold;
@@ -67,4 +67,20 @@ footer ul {
 footer ul li {
   float:center;
   margin-left:15px;
+}
+
+.des {
+  margin-top:0px;
+}
+
+.article-action {
+  border:1px solid #eaeaea;
+  padding-top:5px;
+  margin-top:10px;
+}
+
+.btn-indix {
+  padding-right:20px;
+  padding-left:20px;
+  font-size:1em;
 }
