@@ -1,18 +1,20 @@
 
-<table border="1">
+<div class= "table-responsive">
+  <table border="0" class= "table">
+      <tr align="center">
+      <th> Titles </th>
+      <th>Descriptions</th>
+      <th colspan="3">Table Actions</th>
+    </tr>
+    <% @articles.each do |ar| %>
     <tr>
-    <th> Titles </th>
-    <th>Descriptions</th>
-  </tr>
-  <% @articles.each do |ar| %>
-  <tr>
-    <td> <%= ar.title %> </td>
-    <td> <%= ar.description %>  </td>
-    <td> <%= link_to 'Edit', edit_article_path(ar) %> </td>
-    <td> <%= link_to 'Show', article_path(ar) %> </td>
-    <td> <%= link_to 'Delete', article_path(ar), method: :delete, data: {confirm: "Are you sure ?"} %> </td>
-  </tr>
-
-  <% end %>
+      <td> <%= ar.title %> </td>
+      <td> <%= ar.description %>  </td>
+      <td> <%= link_to 'Edit', edit_article_path(ar) %> </td>
+      <td> <%= link_to 'Show', article_path(ar) %> </td>
+      <td> <%= link_to 'Delete', article_path(ar), method: :delete, data: {confirm: "Are you sure ?"} %> </td>
+    </tr>
   
-</table>
+    <% end %>
+  </table>
+</div>

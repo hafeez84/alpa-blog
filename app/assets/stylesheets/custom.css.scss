@@ -1,8 +1,15 @@
-$navbar-default-bg:black;
+$navbar-default-bg:#5D6D7E;
 
 @import "bootstrap-sprockets";
 
 @import "bootstrap";
+body {
+  background-color:#ECF0F1;
+}
+.btn-danger {
+  background-color:black;
+}
+
 
 
 #logo {
@@ -35,15 +42,29 @@ $navbar-default-bg:black;
 }
 
 .btn-xlarge {
-  background-color:black;
   font-size:2em;
 }
 
-.sub {
-  background-color:black;
-}
 
 #red:hover {
   color:red;
 }
 
+footer {
+  margin:10px;
+  padding:5px;
+  border-top:2px solid #eaeaea;
+}
+
+footer small{
+  float:left;
+}
+
+footer ul {
+  float:right;
+  list-style:none;
+}
+footer ul li {
+  float:center;
+  margin-left:15px;
+}
