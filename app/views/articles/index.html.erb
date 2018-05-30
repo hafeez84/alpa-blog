@@ -9,7 +9,7 @@
     <% @articles.each do |ar| %>
     <tr>
       <td > <%= ar.title %> </td>
-      <td> <%= ar.description %>  </td>
+      <td> <%= truncate(ar.description, length: 50) %>  </td>
       <td> <%= link_to 'Edit', edit_article_path(ar), class:"btn btn-xs btn-primary btn-indix"%> </td>
       <td> <%= link_to 'Show', article_path(ar), class:"btn btn-xs btn-success btn-indix" %> </td>
       <td> <%= link_to 'Delete', article_path(ar), method: :delete, data: {confirm: "Are you sure ?"} , class:"btn btn-xs btn-danger btn-indix"%> </td>
