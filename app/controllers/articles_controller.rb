@@ -14,8 +14,9 @@ class ArticlesController < ApplicationController
   end
   
   def create
+    # debugger #for debuggin porpuse in the server terminal. to see what has been passed on
     @article = Article.new(article_params)
-    @article.user = User.first
+    @article.user = User.first # ///
     if @article.save
       flash[:success] = "Article was created succesfully"
       redirect_to article_path(@article)
