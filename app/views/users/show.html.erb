@@ -7,4 +7,7 @@
 </div>
 <h3 align = "center"><%= @user.username %>'s Articles </h3>
 
-<%= render 'articles/articles', obj: @user.articles %>
+<%= render 'articles/articles', obj: @u_art %>
+<div align= "center">
+  <%= will_paginate @u_art %>
+</div>

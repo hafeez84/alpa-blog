@@ -2,6 +2,19 @@
 <h3 align = "center"> Title : <%= @article.title %> </h3>
 
 <div class =  "well col-xs-8 col-xs-offset-2 well-lg">
+  <% if @article.user %>
+  <ul class= "listing">
+    <div align="center">
+      <div class= "col-md-10 col-md-offset-1 center listing">
+          <li><small> Creadted by:</small></li>
+          <li><%= link_to gravatar_for(@article.user), user_path(@article.user) %> </li>
+          <li class= "article-title"> <%= link_to @article.user.username, user_path(@article.user) %> </li>
+          <li><small> <%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></small></li>
+      </div>
+    </div>
+  </ul>
+  <% end %>
+  
   <h4 class="des" align="center">Description:</h4>
   <%= truncate(@article.description, length: 1000) %>
   

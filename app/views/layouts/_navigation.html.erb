@@ -24,6 +24,12 @@
         <button type="submit" class="btn btn-danger sub">Submit</button>
       </form>
       
+      <% if obj %>
+      <ul class= "nav navbar-nav navbar-right">
+        <li class= "username"> <%= link_to "#{obj.username}", user_path(obj) %> </li>
+      </ul>
+      <% end %>
+      
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
