@@ -14,8 +14,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><%= link_to 'Home', root_path, id: "red" %></li>
-        <li><%= link_to 'Create New Article', new_article_path , id: "red" %></li>
+        <% if logged_in? %>
+          <li> <%= link_to 'Users', users_path %> </li>
+          <li><%= link_to 'Create New Article', new_article_path , id: "red" %></li>
+        <% else %>
+          <li><%= link_to 'Home', root_path, id: "red" %></li>
+        <% end %>
       </ul>
       <form class="navbar-form navbar-left">
         <div class="form-group">
@@ -24,10 +28,17 @@
         <button type="submit" class="btn btn-danger sub">Submit</button>
       </form>
       
-      <% if obj %>
-      <ul class= "nav navbar-nav navbar-right">
-        <li class= "username"> <%= link_to "#{obj.username}", user_path(obj) %> </li>
-      </ul>
+      <% if logged_in? %>
+        <ul class= "nav navbar-nav navbar-right">
+          <li> <%= link_to "#{current_user.username}", user_path(current_user), class: "username" %></li>
+          <li> <%= link_to 'Edit your profile', edit_user_path(current_user) %> </li>
+          <li> <%= link_to 'Log out', logout_path, method: :delete %></li>
+        </ul>
+      <% else %>
+         <ul class= "nav navbar-nav navbar-right">
+          <li> <%= link_to 'Log in', login_path%></li>
+          <li> <%= link_to 'Sign up', signup_path%></li>
+        </ul>
       <% end %>
       
     </div><!-- /.navbar-collapse -->

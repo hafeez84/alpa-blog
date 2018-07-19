@@ -18,3 +18,7 @@
     <% end %>
   </table>
 </div>
+
+
+
+  <li class= "username"> <%= link_to "#{User.find(params[session[:user_id]])}", user_path(User.find(params[session[:user_id]]) %> </li>

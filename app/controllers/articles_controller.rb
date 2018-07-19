@@ -10,13 +10,10 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
   
-  def edit
-  end
-  
   def create
     # debugger #for debuggin porpuse in the server terminal. to see what has been passed on
     @article = Article.new(article_params)
-    @article.user = User.first # ///
+    @article.user = current_user if logged_in?# ///
     if @article.save
       flash[:success] = "Article was created succesfully"
       redirect_to article_path(@article)
@@ -25,8 +22,10 @@ class ArticlesController < ApplicationController
     end
   end
   
+  def edit
+  end
+  
   def update
-    
     if @article.update(article_params)
       flash[:success] = "Article was updated succesfully"
       redirect_to article_path(@article)
