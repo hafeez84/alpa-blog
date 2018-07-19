@@ -14,7 +14,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-          <li> <%= link_to 'Users', users_path %> </li>
+          <li> <%= link_to 'Users', users_path , id: "red"%> </li>
         <% if logged_in? %>
           <li><%= link_to 'Create New Article', new_article_path , id: "red" %></li>
         <% else %>
@@ -31,14 +31,14 @@
       <% if logged_in? %>
         <ul class= "nav navbar-nav navbar-right">
           <li> <a> <%= "Admin" if (current_user.admin?) %> </a></li>
-          <li> <%= link_to "#{current_user.username}", user_path(current_user), class: "username" %></li>
-          <li> <%= link_to 'Edit your profile', edit_user_path(current_user) %> </li>
-          <li> <%= link_to 'Log out', logout_path, method: :delete %></li>
+          <li> <%= link_to "#{current_user.username}", user_path(current_user), id: "red", class: "username" %></li>
+          <li> <%= link_to 'Edit your profile', edit_user_path(current_user), id: "red" %> </li>
+          <li> <%= link_to 'Log out', logout_path, method: :delete , id: "red" %></li>
         </ul>
       <% else %>
          <ul class= "nav navbar-nav navbar-right">
-          <li> <%= link_to 'Log in', login_path%></li>
-          <li> <%= link_to 'Sign up', signup_path%></li>
+          <li> <%= link_to 'Log in', login_path , id: "red"%></li>
+          <li> <%= link_to 'Sign up', signup_path , id: "red"%></li>
         </ul>
       <% end %>
       
