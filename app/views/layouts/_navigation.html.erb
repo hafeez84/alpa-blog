@@ -14,8 +14,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <% if logged_in? %>
           <li> <%= link_to 'Users', users_path %> </li>
+        <% if logged_in? %>
           <li><%= link_to 'Create New Article', new_article_path , id: "red" %></li>
         <% else %>
           <li><%= link_to 'Home', root_path, id: "red" %></li>

@@ -1,5 +1,4 @@
 <h2 align = "center"> Users of Alph Blog </h2>
-<% if logged_in? %>
   <div align="center" class="row">
     <% @users.each do |u| %>
     <div class= "well col-md-4 col-md-offset-4 center">
@@ -14,6 +13,3 @@
   <div align="center">
       <%= will_paginate %>
   </div>
-<% else %>
-  <% flash.now[:danger] = "You must be logged in to see users !" %>
-<% end %>
