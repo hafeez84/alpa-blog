@@ -2,7 +2,11 @@
 
 <div class = "row">
   <div class = "col-md-2 col-md-offset-5 center">
-    <%= image_tag @user.avatar_url, height: 150, width: 150, class: "img-circle"  %>
+  	<% if @user.avatar? %>
+    <%= image_tag @user.avatar, height: 150, width: 150, class: "img-circle" %>
+    <% else %>
+    	<%= gravatar_for @user, size: 150 , class: "img-circle" %>
+    <% end %>
   </div>
 </div>
 <h3 align = "center"><%= @user.username %>'s Articles </h3>

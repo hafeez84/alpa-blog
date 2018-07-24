@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :articles, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
+  after_commit :remove_previously_stored_avatar, on: :update
   before_save {self.email = email.downcase}
   validates :username, presence: true, uniqueness: { case_sensitive: false }, length: {minimum: 3, maximum: 10}
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

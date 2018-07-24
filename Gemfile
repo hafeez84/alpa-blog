@@ -9,6 +9,7 @@ gem 'will_paginate', '3.0.7'
 gem 'bootstrap-will_paginate', '0.0.10'
 
 gem 'carrierwave', '~> 1.0'
+gem 'rmagick'
 
 # Use SCSS for stylesheets
 gem 'bootstrap-sass', '~> 3.3.7'

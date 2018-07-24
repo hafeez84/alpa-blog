@@ -4,7 +4,11 @@
       <% if current_user != u %>
         <div class= "well col-md-4 col-md-offset-4 center">
           <ul class= "listing">
-            <li><%= link_to gravatar_for(u), user_path(u) %> </li>
+            <li> <% if u.avatar? %>
+                  <%= image_tag u.avatar_url, height: 150, width: 150, class: "img-circle" %>
+                  <% else %>
+                    <%= gravatar_for u, size: 150 , class: "img-circle" %>
+                  <% end %> </li>
             <li class= "article-title"> <%= link_to u.username, user_path(u) %> </li>
             <li><small> <%= pluralize(u.articles.count, "article") if u.articles %></small></li>
             <% if logged_in? %>

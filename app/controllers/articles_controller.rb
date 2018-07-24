@@ -10,11 +10,13 @@ class ArticlesController < ApplicationController
   
   def new
     @article = Article.new
+    @image = ImageUploader.new
   end
   
   def create
     # debugger #for debuggin porpuse in the server terminal. to see what has been passed on
     @article = Article.new(article_params)
+    @image = params[:image]
     @article.user = current_user if logged_in?# ///
     if @article.save
       flash[:success] = "Article was created succesfully"
@@ -52,7 +54,7 @@ class ArticlesController < ApplicationController
   end
   
   def article_params
-    params.require(:article).permit(:title, :description)
+    params.require(:article).permit(:title, :description, :image)
   end
   
   def require_same_user
