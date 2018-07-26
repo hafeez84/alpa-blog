@@ -1,20 +1,20 @@
 
 <h3 align = "center"> Title : <%= @article.title %> </h3>
 
-<div class =  "col-xs-8 col-xs-offset-2">
+<div class =  "col-xs-8 col-xs-offset-2 well well-lg">
   <% if @article.user %>
   <div class= "row">
       <ul class= "listing">
-          <div class="col-xs-2">
+          <div class="col-xs-2 col-md-1">
               <li> 
                   <% if @article.user.avatar? %>
-                     <%= image_tag @article.user.avatar, height: 50, width: 50, class: "img-circle" %>
+                     <%= image_tag @article.user.avatar, height: 60, width: 60, class: "img-circle" %>
                   <% else %>
                     <%= gravatar_for @article.user, size: 15 , class: "img-circle" %>
                   <% end %> 
               </li>
             </div>
-            <div class="col-xs-2">
+            <div class="col-xs-2 art_show_username">
               <li class= "article-title"> <%= link_to @article.user.username, user_path(@article.user) %> 
               </li>
             </div>
@@ -23,12 +23,12 @@
   </div>
   
   <div class="row">
-    <p class="col-xs-6 col-xs-offset-1 index">
+    <div class="col-xs-12 index">
         <%= truncate(@article.description, length: 1000) %>
-    </p>
-    <div class="col-xs-4"> huuuu</div>
+    </div>
+        <%= (image_tag @article.image, class: "col-xs-10 col-xs-offset-1") if @article.image? %>
   </div>
-    <%= image_tag @article.image if @article.image? %>
+
   
   <div class="article-action">
     <% if logged_in? && (current_user == @article.user || current_user.admin?) %>

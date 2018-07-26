@@ -107,20 +107,22 @@ ul.listing {
   margin-bottom:15px;
 }
 
-p.index {
-  
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-
-  display: inline-block;
-  background: gold;
-  width: 100px;
-  height: 40px;
-  background-color:red;
+div.index {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+
+.art_show_username {
+  margin: 15px 0px;
+}
+
+.admin {
+  background-color: green;
+}
+
+
 
 
 
