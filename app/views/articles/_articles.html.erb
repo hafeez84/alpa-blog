@@ -22,7 +22,7 @@
         </div>
           
           <div class= "article-meta-details"> 
-            <small>Created by: <%= link_to "#{article.user.username}",  user_path(current_user) %> ,
+            <small>Created by: <%= link_to "#{article.user.username}",  user_path(article.user) %> ,
             <%= time_ago_in_words(article.created_at) %> ago, 
              last updated: <%= time_ago_in_words(article.updated_at) %> ago
             </small> 
