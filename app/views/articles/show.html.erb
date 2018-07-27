@@ -10,7 +10,7 @@
                   <% if @article.user.avatar? %>
                      <%= image_tag @article.user.avatar, height: 60, width: 60, class: "img-circle" %>
                   <% else %>
-                    <%= gravatar_for @article.user, size: 15 , class: "img-circle" %>
+                    <%= gravatar_for @article.user, size: 60 , class: "img-circle" %>
                   <% end %> 
               </li>
             </div>
