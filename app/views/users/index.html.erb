@@ -2,7 +2,7 @@
   <div align="center" class="row">
     <% @users.each do |u| %>
       <% if current_user != u %>
-        <div class= "well col-md-4 col-md-offset-4 center">
+        <div class= "well col-md-3 col-md-offset-4 col-xs-6 col-xs-offset-3 center">
           <ul class= "listing">
             <li> <% if u.avatar? %>
                   <%= image_tag u.avatar_url, height: 150, width: 150, class: "img-circle" %>
