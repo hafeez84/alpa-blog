@@ -16,5 +16,8 @@
 !/log/.keep
 /tmp
 /public/uploads
+*.jpg
+*.png
+*.jpeg
 
 /db/migrate/20180731124250_drop_comment.rb
