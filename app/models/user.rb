@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :articles, dependent: :destroy
+  has_many :comments, dependent: :destroy
   mount_uploader :avatar, AvatarUploader
   after_commit :remove_previously_stored_avatar, on: :update
   before_save {self.email = email.downcase}

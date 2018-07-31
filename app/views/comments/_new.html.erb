@@ -1,0 +1,12 @@
+<% if logged_in?%>
+	<%= form_for([art, Comment.new], remote: true) do |f| %>
+		<div class="row">
+			<div class= "form-group">
+		      	<div class= "col-sm-4 col-md-6">
+		          <%= f.text_field :body, class: "form-control", placeholder: "Your comment", autofocus: true %>
+		      	</div>
+		      	<%= f.submit class: "btn btn-primary btn-sm" %>
+	   		</div>
+		</div>
+	<%end%>
+<%end%>

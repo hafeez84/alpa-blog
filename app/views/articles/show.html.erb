@@ -29,6 +29,13 @@
         <%= (image_tag @article.image, class: "col-xs-10 col-xs-offset-1") if @article.image? %>
   </div>
 
+  <div>
+   <hr />
+    <b>Comments: </b> <br/>
+    <%= render  @article.comments %>
+    <%= render 'comments/new', art: @article %>
+  </div>
+
   
   <div class="article-action">
     <% if logged_in? && (current_user == @article.user || current_user.admin?) %>

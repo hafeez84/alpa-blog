@@ -28,6 +28,13 @@
             </small> 
           </div>
         
+          <div>
+            <hr />
+            <b>Comments: </b> <br/>
+            <%= render article.comments %>
+            <%= render 'comments/new', art: article %>
+            <hr />
+          </div>
 
         <div class="article-actions">
         <% if logged_in? && (current_user == article.user || current_user.admin?) %>
