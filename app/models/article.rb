@@ -1,6 +1,8 @@
 class Article < ActiveRecord::Base
   belongs_to :user
   has_many :comments, dependent: :destroy
+  has_many :article_categories
+  has_many :categories, through: :article_categories
   mount_uploader :image, ImageUploader
   after_commit :remove_previously_stored_image, on: :update
   validates :title, presence: true, length: {minimum: 3, maximum:20}
