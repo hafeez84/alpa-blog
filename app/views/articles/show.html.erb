@@ -35,7 +35,9 @@
     <%= render  @article.comments %>
     <%= render 'comments/new', art: @article %>
   </div>
-
+  <% if @article.categories.any? %>
+    <p>Categories: <%= render @article.categories %></p>
+  <% end %>
   
   <div class="article-action">
     <% if logged_in? && (current_user == @article.user || current_user.admin?) %>
