@@ -15,3 +15,9 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+// $(document).ready(function () {
+// 	$('#newcom').on('ajax:complete', function(evet, data, status){
+// 		$('#comments').html(data.responseText)
+// 	})
+// })

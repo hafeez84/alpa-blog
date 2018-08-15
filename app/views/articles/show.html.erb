@@ -32,8 +32,12 @@
   <div>
    <hr />
     <b>Comments: </b> <br/>
-    <%= render  @article.comments %>
-    <%= render 'comments/new', art: @article %>
+    <div id="comments">
+      <%= render  @article.comments %>
+    </div>
+    <div id="newcom">
+      <%= render 'comments/new', art: @article %>
+    </div>
   </div>
   <% if @article.categories.any? %>
     <p>Categories: <%= render @article.categories %></p>
