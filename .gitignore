@@ -15,7 +15,10 @@
 /log/*
 !/log/.keep
 /tmp
-/public/uploads
+/public/uploads/*
 *.jpg
 *.png
 *.jpeg
+
+/config/application.yml
+config/application.yml
