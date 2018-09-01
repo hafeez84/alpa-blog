@@ -1,4 +1,6 @@
- <%= render 'layouts/msgs' %>
+<% if params[:action] == 'search' %>
+ 	<%= render 'layouts/msgs' %>
+<% end %>
 <div class="container">
 	<% if @objs %>
 		<% if @objs.size > 0 %>
