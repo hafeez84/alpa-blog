@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   
   before_action :set_article, only: [:edit, :update, :show, :destroy]
-  before_action :require_user, except: [:index, :show]
+  before_action :require_user, except: [:index, :show, :search]
   before_action :require_same_user, only: [:edit, :update, :destroy]
   
   def index
@@ -45,6 +45,17 @@ class ArticlesController < ApplicationController
     @article.destroy
     flash[:danger] = "Article was deleted..."
     redirect_to articles_path
+  end
+
+  def search
+    if params[:s].blank?
+      flash.now[:danger] = "You have entered an empty string !"
+    else
+      @objs = Article.search(params[:s])
+      flash.now[:danger] = "No results match your search criteria, please try again" if @objs.blank?
+    end
+    # render json: @objs
+    render partial: 'shared/results'
   end
   
   private

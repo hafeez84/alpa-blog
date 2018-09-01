@@ -8,5 +8,13 @@ class Article < ActiveRecord::Base
   validates :title, presence: true, length: {minimum: 3, maximum:20}
   validates :description, presence: true, length: {minimum: 10, maximum: 10000}
   validates :user_id, presence: true
+
+  def self.search(p)
+  	p.strip!
+  	p.downcase!
+  	res = where("title like ?", "%#{p}%")
+  	return nil unless res
+  	res
+  end
   
 end

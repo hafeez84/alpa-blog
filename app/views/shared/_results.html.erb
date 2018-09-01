@@ -1,0 +1,22 @@
+ <%= render 'layouts/msgs' %>
+<div class="container">
+	<% if @objs %>
+		<% if @objs.size > 0 %>
+			<div class="results-block well col-md-8 col-md-offset-2">
+				<p align="center"> <strong> Articles</strong></p>
+				<hr>
+				<table class="col-md-12" >
+					<% @objs.each do |r| %>
+						<tr>
+							<td> <strong> Title :</strong>  <%= r.title  %></td>
+							<td> <strong> Description :</strong> <%= truncate(r.description, length: 30) %></td>
+							<td><%= link_to "View", article_path(r), class: "btn btn-xs btn-success" %></td>
+						</tr>
+					<% end %>
+				</table>
+			</div>
+		<% end %>
+	<% end %>
+</div>
+
+

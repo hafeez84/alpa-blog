@@ -21,3 +21,9 @@
 // 		$('#comments').html(data.responseText)
 // 	})
 // })
+
+$(document).on('turbolinks:load', function(){
+	$('#lookup-form').on('ajax:complete', function(event, data, status){
+		$('#results').html(data.responseText)
+	})
+})
