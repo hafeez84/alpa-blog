@@ -13,13 +13,13 @@
 						<% @objs.each do |r| %>
 							<% if r.instance_of? (Article) %>
 								<tr>
-									<td> <strong> Title :</strong>  <%= r.title  %></td>
+									<td> <strong> Title :</strong> <i class="glyphicon glyphicon-file"></i> <%= r.title  %></td>
 									<td> <strong> Description :</strong> <%= truncate(r.description, length: 30) %></td>
 									<td><%= link_to "View", article_path(r), class: "btn btn-xs btn-success" %></td>
 								</tr>
 							<% else %>
 								<tr class="users-search-results">
-									<td> <strong> Username :</strong>  <%= r.username  %></td>
+									<td> <strong> Username :</strong> <i class="glyphicon glyphicon-user"></i> <%= r.username  %></td>
 									<td> <strong> Email :</strong> <%= truncate(r.email, length: 30) %></td>
 									<td><%= link_to "Profile", user_path(r), class: "btn btn-xs btn-warning" %></td>
 								</tr>
