@@ -12,9 +12,9 @@ class Article < ActiveRecord::Base
   def self.search(p)
   	p.strip!
   	p.downcase!
-  	res = where("title like ?", "%#{p}%")
-  	return nil unless res
-  	res
+  	res1 = ( User.where("username like ?", "%#{p}%") + Article.where("title like ?", "%#{p}%") )
+  	return nil unless res1
+  	res1
   end
   
 end
