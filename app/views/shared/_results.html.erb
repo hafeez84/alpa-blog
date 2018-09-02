@@ -7,7 +7,7 @@
 		<% if @objs.size > 0 %>
 			<div class="results-block well col-md-8 col-md-offset-2">
 				
-					<p align="center"> <strong> Articles</strong></p>
+					<p align="center"> <strong> Results</strong></p>
 					<hr>
 					<table class="col-md-12" >
 						<% @objs.each do |r| %>
@@ -18,10 +18,10 @@
 									<td><%= link_to "View", article_path(r), class: "btn btn-xs btn-success" %></td>
 								</tr>
 							<% else %>
-								<tr>
+								<tr class="users-search-results">
 									<td> <strong> Username :</strong>  <%= r.username  %></td>
 									<td> <strong> Email :</strong> <%= truncate(r.email, length: 30) %></td>
-									<td><%= link_to "View", user_path(r), class: "btn btn-xs btn-success" %></td>
+									<td><%= link_to "Profile", user_path(r), class: "btn btn-xs btn-warning" %></td>
 								</tr>
 							<% end %>
 						<% end %>
