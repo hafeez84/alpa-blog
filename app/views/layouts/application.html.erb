@@ -14,12 +14,14 @@
   <div id="results">
     <%= render 'shared/results' %>
   </div>
-  
-  <div class= "container">
+
+  <div class= "container-fluid">
     <%= yield %>
   </div>
+<div class="footer-div">
   <%= render 'layouts/footer' %>
-  <%= debug(params) if Rails.env.development? %>
+</div>
+<%= debug(params) if Rails.env.development? %>
 
 </body>
 </html>

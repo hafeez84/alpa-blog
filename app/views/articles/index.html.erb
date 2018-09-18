@@ -1,7 +1,21 @@
 
-<h1 align="center">Listing all articles</h1>
 
-<%= render 'articles', obj: @articles %>
-<div align = "center">
-  <%= will_paginate %> 
+<div class="col-md-7 col-md-offset-1" align="center">
+  <div class="well">
+    <h1 align="center">Listing all articles</h1>
+    <%= render 'articles', obj: @articles %>
+    <%= will_paginate %>
+  </div>
 </div>
+
+<div class="col-md-4">
+  <div >
+    <%= link_to "All Categories", categories_path, class: "list-group-item list-group-item-action active" %>
+      <% Category.all.each do |category| %>
+      <%= link_to "#{category.name}", category_path(category), class: "list-group-item list-group-item-action" %>
+      <% end %>
+      <% if logged_in? and current_user.admin? %>
+        <span role="separator" class="divider"></span>
+        <%= link_to "Create New Category", new_category_path, class: "list-group-item list-group-item-action active" %>
+      <% end %>
+  </div>
