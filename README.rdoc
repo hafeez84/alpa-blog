@@ -1,2 +1,1 @@
 A simple Ruby on Rails blog, which i am currently working on.
-You can check the project here https://immense-lowlands-92456.herokuapp.com/
