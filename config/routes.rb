@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
-  
+
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
@@ -21,6 +21,15 @@ Rails.application.routes.draw do
   resources :categories, except: [:destroy]
 
   get 'search', to: 'articles#search'
+
+
+  namespace 'api' do
+    namespace 'v1' do
+      resources :users
+    end
+  end
+
+  get 'test', to: 'users#test'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

@@ -2,6 +2,13 @@ class UsersController < ApplicationController
 
   before_action :set_user, only:[:edit, :update, :show, :destroy]
   before_action :require_same_user, only: [:edit, :update, :destroy]
+  require 'users_controller'
+  attr_accessor :api_v1
+  @@api_v1 = Api::V1::UsersController.new
+
+  def test
+    render json: {status: 'SUCCESS', message:"Loaded successfully", data: @@api_v1.index}, status: :ok
+  end
 
   def new
     @user = User.new
@@ -14,7 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "Welcome to Alpha-Blog #{@user.username}"
-      redirect_to user_path(@user)
+      redirect_to @user
     else
       render 'new'
     end
@@ -36,7 +43,9 @@ class UsersController < ApplicationController
     @u_art = @user.articles.paginate(page: params[:page], per_page: 5)
   end
 
+
   def index
+    # @@api_v1.index
     @users = User.paginate(page: params[:page], per_page: 5)
   end
 
